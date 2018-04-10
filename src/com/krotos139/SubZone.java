@@ -20,11 +20,6 @@ public class SubZone {
         activeColumn = null;
         predictionColumn = null;
     }
-    public void setSensorInputs(boolean [] in) {
-        for (int i=0 ; i<Math.min(inputs.length, in.length); i++) {
-            this.inputs[i].sensor = in[i];
-        }
-    }
     public void analyze() {
         activeColumn = null;
         predictionColumn = null;
@@ -35,5 +30,15 @@ public class SubZone {
     public void teach() {
 
 
+    }
+    // DEBUG
+    public void setSensorInputs(boolean [] in) {
+        for (int i=0 ; i<Math.min(inputs.length, in.length); i++) {
+            this.inputs[i].active = in[i] ? 1.0f : 0.0f;
+        }
+    }
+    public void setColumnNeurons(int column, boolean [] in) {
+        Column c = columns[column];
+        c.
     }
 }

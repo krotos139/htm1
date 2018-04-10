@@ -2,10 +2,11 @@ package com.krotos139;
 
 import java.util.ArrayList;
 
-public class Neuron {
+public class Neuron implements INeuron {
     private Column column;
     private ArrayList<Synaps> synaps;
     private float threshold = 0.8f;
+    public float active;
 
     public Neuron(Column column) {
         this.synaps = new ArrayList<Synaps>();

@@ -13,6 +13,7 @@ public class Column {
         active = (byte) -1;
     }
     public void analyse() {
+        if (neurons.size() == 0) return;
         if (active == -1) {
             neurons.get(0).analyse();
         }
@@ -20,8 +21,12 @@ public class Column {
     public void teach() {
         if (neurons.size() == 0) {
             zone.activeColumn = this;
-            neurons.add(new Neuron());
+            neurons.add(new Neuron(this));
             active = 0;
         }
+    }
+    // Debug
+    public void setNeurons() {
+
     }
 }

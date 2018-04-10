@@ -1,6 +1,5 @@
 package com.krotos139;
 
-public class Input {
-    public boolean sensor;
-    public boolean prediction;
+public class Input implements INeuron {
+    public float active = 0.0f;
 }
