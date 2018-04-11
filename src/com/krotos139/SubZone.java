@@ -22,11 +22,18 @@ public class SubZone {
     }
     public void analyze() {
         activeColumn = null;
-        predictionColumn = null;
+        float activeSumm = 0;
         for (int i=0 ; i<columns.length ; i++) {
-            columns[i].analyse();
+            activeSumm += columns[i].analyse();
+        }
+        activeSumm /= columns.length;
+        activeColumn = columns[0];
+        for (int i=0 ; i<columns.length ; i++) {
+            columns[i].active -= activeSumm;
+            if (columns[i].active > activeColumn.active) activeColumn = columns[i];
         }
     }
+
     public void teach() {
 
 

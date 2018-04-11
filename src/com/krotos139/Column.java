@@ -4,29 +4,26 @@ import java.util.ArrayList;
 
 public class Column extends INeuron {
     private ArrayList<Neuron> neurons;
-    private ArrayList<Neuron> enableNeurons;
+    private Neuron enableNeuron;
     private SubZone zone;
     public Column(SubZone zone) {
         this.zone = zone;
         this.neurons = new ArrayList<Neuron>();
-        this.enableNeurons = new ArrayList<Neuron>();
+        this.enableNeuron = null;
         active = 0.0f;
     }
-    private void getEnableNeurons() {
 
+    protected void setEnableNeurons(Neuron n) {
+        enableNeuron = n;
     }
-    private void addEnableNeurons(Neuron n) {
-        if (!enableNeurons.contains(n)) {
-            enableNeurons.add(n);
-        }
-    }
-    public void analyse() {
+    public float analyse() {
         active = 0.0f;
-        if (neurons.size() == 0) return;
-        getEnableNeurons();
-        for (int i=0; i<enableNeurons.size() ; i++) {
-            enableNeurons.get(i).analyse();
+        if (neurons.size() == 0) return 0.0f;
+        if (enableNeuron == null) {
+            enableNeuron = neurons.get(0);
         }
+        enableNeuron.analyse();
+        return active;
     }
     public void teach() {
         if (neurons.size() == 0) {
@@ -42,9 +39,6 @@ public class Column extends INeuron {
         neurons.add(n);
         if (neurons.size() > 1) {
             neurons.get(neurons.size()-2).setNext(n);
-        }
-        if (enableNeurons.size() == 0) {
-            this.enableNeurons.add(n);
         }
     }
 }

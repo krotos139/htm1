@@ -11,7 +11,8 @@ public class Tests extends Assert {
         InputMatrix in1 = new InputMatrix(5);
         SubZone sz1 = new SubZone(5, 5);
         System.out.print("Learn\n");
-        boolean [][]in_p1 = {{true, false, false, false, false},
+        boolean [][]in_p1 = {
+                {true, false, false, false, false},
                 {false, true, false, false, false},
                 {false, false, true, false, false},
                 {false, false, false, true, false},
@@ -19,21 +20,125 @@ public class Tests extends Assert {
         };
         for (int i=0 ; i<in_p1.length ; i++) {
             in1.setBooleans(in_p1[i]);
+            sz1.setColumnNeurons(i, in1.inputs);
+        }
+        for (int n=0 ; n<in_p1.length ; n++) {
+            System.out.print("Analyse " + n + " pattern\n");
+            in1.setBooleans(in_p1[n]);
+            System.out.print("Pattern: ");
+            for (int i = 0; i < in1.inputs.length; i++) {
+                System.out.print((in1.inputs[i].active > 0.8f?"A":"_") + " ");
+            }
+            System.out.print("\n");
+            sz1.analyze();
+            System.out.print("Columns : ");
+            for (int i = 0; i < sz1.columns.length; i++) {
+                System.out.print((sz1.columns[i].active > 0.8f?"A":"_") + " ");
+            }
+            System.out.print("\n");
+        }
+        //sz1.teach();
+
+    }
+
+    @Test
+    public void HW2() {
+        System.out.print("HW1\n");
+        InputMatrix in1 = new InputMatrix(5);
+        SubZone sz1 = new SubZone(5, 5);
+        System.out.print("Learn\n");
+        boolean [][]in_p1 = {
+                {true, true, false, false, false},
+                {false, true, true, false, false},
+        };
+        for (int i=0 ; i<in_p1.length ; i++) {
+            in1.setBooleans(in_p1[i]);
             sz1.setColumnNeurons(0, in1.inputs);
         }
-        System.out.print("Analyse\n");
-        in1.setBooleans(in_p1[0]);
-        System.out.print("Inputs\n");
-        for (int i=0 ; i<in1.inputs.length ; i++) {
-            System.out.print(i + ":" + in1.inputs[i].active+" ");
+        boolean [][]in_p2 = {
+                {false, false, true, true, false},
+                {false, false, false, true, true},
+        };
+        for (int i=0 ; i<in_p2.length ; i++) {
+            in1.setBooleans(in_p2[i]);
+            sz1.setColumnNeurons(1, in1.inputs);
         }
-        System.out.print("\n");
-        sz1.analyze();
-        System.out.print("Columns\n");
-        for (int i=0 ; i<sz1.columns.length ; i++) {
-            System.out.print(i + ":" + sz1.columns[i].active+" ");
+        boolean [][]in_p3 = {
+                {false, false, true, true, false},
+                {false, true, true, false, false},
+                {true, true, false, false, false},
+        };
+        for (int i=0 ; i<in_p3.length ; i++) {
+            in1.setBooleans(in_p3[i]);
+            sz1.setColumnNeurons(2, in1.inputs);
         }
-        System.out.print("\n");
+        boolean [][]in_p4 = {
+                {true, false, false, false, true},
+                {false, true, false, true, false},
+                {false, false, true, false, false},
+        };
+        for (int i=0 ; i<in_p4.length ; i++) {
+            in1.setBooleans(in_p4[i]);
+            sz1.setColumnNeurons(3, in1.inputs);
+        }
+        boolean [][]in_p5 = {
+                {true, false, false, false, false},
+                {false, true, false, false, false},
+                {false, false, true, false, false},
+                {false, false, false, true, false},
+                {false, false, false, false, true},
+        };
+        for (int i=0 ; i<in_p5.length ; i++) {
+            in1.setBooleans(in_p5[i]);
+            sz1.setColumnNeurons(4, in1.inputs);
+        }
+        boolean [][]in_p = {
+                {true, false, false, false, false},// 5
+                {false, true, false, false, false},// 5
+                {false, false, true, false, false},// 5
+                {false, false, false, true, false},// 5
+                {false, false, false, false, true},// 5
+                {false, false, false, true, true}, // _
+                {false, false, true, true, false}, // 2, 3
+                {false, true, true, false, false}, // 3
+                {true, true, false, false, false}, // 3, 1
+                {false, true, true, false, false}, // 1
+                {false, false, true, true, false}, // 2
+                {false, false, false, true, true}, // 2
+                {true, false, false, false, true}, // 4
+                {false, true, false, true, false}, // 4
+                {false, false, true, false, false}, // 4
+                {false, false, false, true, false}, // _
+                {false, false, false, false, true}, // _
+                {true, false, false, false, false}, // 5
+                {false, true, false, false, false}, // 5
+                {false, false, true, false, false}, // 5
+                {true, false, false, false, true}, // 4
+                {false, true, false, true, false}, // 4
+                {false, false, true, true, false}, // 3
+                {false, true, true, false, false}, // 3
+                {true, true, false, false, false}, // 3
+                {true, false, false, false, true}, // 4
+                {true, true, false, false, false}, // 1
+                {false, true, true, false, false}, // 1
+                {false, false, true, true, false}, // 3
+                {false, false, false, true, true}, // _
+        };
+        for (int n=0 ; n<in_p.length ; n++) {
+            System.out.print("Analyse " + n + " pattern\n");
+            in1.setBooleans(in_p[n]);
+            System.out.print("Pattern: ");
+            for (int i = 0; i < in1.inputs.length; i++) {
+                System.out.print((in1.inputs[i].active > 0.5f?"A":"_") + " ");
+            }
+            System.out.print("\n");
+            sz1.analyze();
+            System.out.print("Columns : ");
+            for (int i = 0; i < sz1.columns.length; i++) {
+                System.out.print((sz1.columns[i].active > 0.5f?"A":"_") + " ");
+            }
+            System.out.print("\n");
+        }
         //sz1.teach();
 
     }
