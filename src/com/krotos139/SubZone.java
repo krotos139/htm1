@@ -2,7 +2,7 @@ package com.krotos139;
 
 public class SubZone {
     private Input [] inputs;
-    private Column [] columns;
+    public Column [] columns;
 
     protected Column activeColumn;
     protected float activeColumnStreng;
@@ -37,8 +37,8 @@ public class SubZone {
             this.inputs[i].active = in[i] ? 1.0f : 0.0f;
         }
     }
-    public void setColumnNeurons(int column, boolean [] in) {
+    public void setColumnNeurons(int column, INeuron [] in) {
         Column c = columns[column];
-        c.
+        c.addNeurons(in);
     }
 }

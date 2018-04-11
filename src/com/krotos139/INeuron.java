@@ -1,5 +1,5 @@
 package com.krotos139;
 
-public interface INeuron {
+public class INeuron {
     float active = 0.0f;
 }
