@@ -12,6 +12,7 @@ public class InputMatrix {
     public void setBooleans( boolean []in1) {
         for (int i=0 ; i < Math.min(inputs.length, in1.length) ; i++) {
             inputs[i].active = in1[i] ? 1.0f : 0.0f;
+            inputs[i].prediction = 0.0f;
         }
     }
 }

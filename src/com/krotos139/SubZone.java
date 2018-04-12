@@ -26,12 +26,12 @@ public class SubZone {
         for (int i=0 ; i<columns.length ; i++) {
             activeSumm += columns[i].analyse();
         }
-        activeSumm /= columns.length;
-        activeColumn = columns[0];
-        for (int i=0 ; i<columns.length ; i++) {
-            columns[i].active -= activeSumm;
-            if (columns[i].active > activeColumn.active) activeColumn = columns[i];
-        }
+//        activeSumm /= columns.length;
+//        activeColumn = columns[0];
+//        for (int i=0 ; i<columns.length ; i++) {
+//            columns[i].active -= activeSumm;
+//            if (columns[i].active > activeColumn.active) activeColumn = columns[i];
+//        }
     }
 
     public void teach() {

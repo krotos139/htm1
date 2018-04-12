@@ -127,15 +127,20 @@ public class Tests extends Assert {
         for (int n=0 ; n<in_p.length ; n++) {
             System.out.print("Analyse " + n + " pattern\n");
             in1.setBooleans(in_p[n]);
-            System.out.print("Pattern: ");
+            System.out.print("Pattern    : ");
             for (int i = 0; i < in1.inputs.length; i++) {
                 System.out.print((in1.inputs[i].active > 0.5f?"A":"_") + " ");
             }
             System.out.print("\n");
             sz1.analyze();
-            System.out.print("Columns : ");
+            System.out.print("Columns    : ");
             for (int i = 0; i < sz1.columns.length; i++) {
                 System.out.print((sz1.columns[i].active > 0.5f?"A":"_") + " ");
+            }
+            System.out.print("\n");
+            System.out.print("Prediction : ");
+            for (int i = 0; i < in1.inputs.length; i++) {
+                System.out.print((in1.inputs[i].prediction >= 0.5f?"A":"_") + " ");
             }
             System.out.print("\n");
         }

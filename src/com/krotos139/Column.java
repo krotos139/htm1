@@ -6,24 +6,39 @@ public class Column extends INeuron {
     private ArrayList<Neuron> neurons;
     private Neuron enableNeuron;
     private SubZone zone;
+    private float activeAttenuation = 0.0f;
+    private boolean isAttenuation = false;
     public Column(SubZone zone) {
         this.zone = zone;
         this.neurons = new ArrayList<Neuron>();
         this.enableNeuron = null;
         active = 0.0f;
     }
-
-    protected void onActive(Neuron n) {
-        enableNeuron = n;
+    public void setActiveAttenuation(float attenuation) {
+        activeAttenuation = attenuation;
+    }
+    protected void onActive(Neuron n, float receiveActive, float activeAttenuation) {
+        this.enableNeuron = n;
+        this.active = Math.min(this.active+receiveActive, 1.0f);
+        this.activeAttenuation = activeAttenuation;
+        if (n != null) {
+            n.sendPreActive();
+        }
+        isAttenuation = false;
     }
     public float analyse() {
-        active = 0.0f;
+        isAttenuation = true;
+
         if (neurons.size() == 0) return 0.0f;
         if (enableNeuron == null) {
             enableNeuron = neurons.get(0);
         }
         enableNeuron.analyse();
-        return active;
+        if (isAttenuation) {
+            active = Math.max(0.0f, active - activeAttenuation);
+        }
+        //System.out.println("active:"+active+" prediction:"+ prediction +" enableNeuron:"+neurons.indexOf(enableNeuron));
+        return getActive();
     }
     public void teach() {
         if (neurons.size() == 0) {

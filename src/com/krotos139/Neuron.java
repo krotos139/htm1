@@ -7,7 +7,8 @@ public class Neuron extends INeuron {
     private ArrayList<Synaps> synaps;
     private float threshold = 0.8f;
     private Neuron next = null;
-    private float nextActiveVal = 0.8f;
+    private static float colunmActive = 0.5f;
+    private static float colunmAttenuation = 0.25f;
 
     public Neuron(Column column) {
         this.synaps = new ArrayList<Synaps>();
@@ -15,11 +16,11 @@ public class Neuron extends INeuron {
         this.next = null;
     }
     public void analyse() {
-        float dActive = 0;
+        active = 0;
         for (int i=0; i<synaps.size(); i++) {
-            dActive += synaps.get(i).getActive();
+            active += synaps.get(i).getActive();
         }
-        if (active > threshold) {
+        if (getActive() > threshold) {
             onActive();
         }
     }
@@ -27,8 +28,12 @@ public class Neuron extends INeuron {
         this.next = next;
     }
     private void onActive() {
-        column.active += active;
-        column.onActive(this.next);
+        column.onActive(this.next, colunmActive, colunmAttenuation);
+    }
+    public void sendPreActive() {
+        for (int i=0; i<synaps.size(); i++) {
+            synaps.get(i).input.prediction = colunmActive; // TODO not shure...
+        }
     }
     private void onDeactive() {
         column.active = 0.0f;
