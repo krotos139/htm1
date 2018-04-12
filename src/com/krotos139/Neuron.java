@@ -15,14 +15,12 @@ public class Neuron extends INeuron {
         this.next = null;
     }
     public void analyse() {
-        active = column.active * 0.3f;
+        float dActive = 0;
         for (int i=0; i<synaps.size(); i++) {
-            active += synaps.get(i).getActive();
+            dActive += synaps.get(i).getActive();
         }
         if (active > threshold) {
             onActive();
-        } else {
-            onDeactive();
         }
     }
     public void setNext(Neuron next) {
@@ -30,7 +28,7 @@ public class Neuron extends INeuron {
     }
     private void onActive() {
         column.active += active;
-        column.setEnableNeurons(this.next);
+        column.onActive(this.next);
     }
     private void onDeactive() {
         column.active = 0.0f;

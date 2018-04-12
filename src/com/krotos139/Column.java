@@ -13,7 +13,7 @@ public class Column extends INeuron {
         active = 0.0f;
     }
 
-    protected void setEnableNeurons(Neuron n) {
+    protected void onActive(Neuron n) {
         enableNeuron = n;
     }
     public float analyse() {
