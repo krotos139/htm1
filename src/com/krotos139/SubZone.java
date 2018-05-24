@@ -1,25 +1,26 @@
 package com.krotos139;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class SubZone extends ISubZone {
     private Column [] columns;
-    private LinkedList<InputSignal> input;
-    private LinkedList<InputSignal> inputForecast;
+    private LinkedList<INeuron> inputActive;
+    private LinkedList<INeuron> inputForecast;
     private LinkedList<Column> activeColumns;
     private ISubZone upSubZone;
     private LinkedList<ISubZone> downSubZones;
 
-    private InputSignal upOutput;
+    private INeuron upOutput;
     private boolean upOutputChange;
-    private LinkedList<InputSignal> downOutputs;
+    private LinkedList<INeuron> downOutputs;
 
     public SubZone(int numColumns) {
         columns = new Column[numColumns];
         for (int i=0 ; i<numColumns ; i++) {
             columns[i] = new Column(this);
         }
-        input = new LinkedList<>();
+        inputActive = new LinkedList<>();
         inputForecast = new LinkedList<>();
         activeColumns = new LinkedList<>();
         upSubZone = null;
@@ -29,12 +30,13 @@ public class SubZone extends ISubZone {
     }
 
     @Override
-    public void inSignal(InputSignal signal) {
-        if (signal.type == SignalType.Forecast) {
-            inputForecast.push(signal);
-        } else {
-            input.push(signal);
-        }
+    public void inSignalActive(INeuron inputNeuron) {
+        inputActive.add(inputNeuron);
+    }
+
+    @Override
+    public void inSignalForecast(INeuron inputNeuron) {
+        inputForecast.add(inputNeuron);
     }
 
     public void setDownSubZones(ISubZone zone) {
@@ -49,74 +51,44 @@ public class SubZone extends ISubZone {
 
     public void analyze() {
         if (inputForecast.size() > 0) {
-            for (InputSignal s : inputForecast) {
-                ((Column)s.id).onForecast(s.id.active);
+            for (INeuron s : inputForecast) {
+                ((Column)s).onForecast();
             }
         }
-        if (activeColumns.size() == 0) {
-            for (Column c : columns) {
-                c.pushInput(input);
-            }
-        } else {
-            for (Column c : activeColumns) {
-                c.pushInput(input);
-            }
+        for (Column c : columns) {
+            c.pushInput(inputActive);
         }
-        input.clear();
-        // DEBUG
-        activeColumns.clear();
+        inputActive.clear();
+
         if (upOutputChange) {
-            activeColumns.clear();
-            activeColumns.push((Column) upOutput.id);
             if (upSubZone != null) {
-                upSubZone.inSignal(upOutput);
+                upSubZone.inSignalActive(upOutput);
             }
             for (Column c : columns) {
-                if (c != upOutput.id) {
+                if (c != upOutput) {
                     c.active = 0.0f; // Disable after active differ
                 }
             }
 
         }
-        if (downOutputs.size() >0) {
-            for (ISubZone z : downSubZones) {
-                for (InputSignal i : downOutputs) {
-                    z.inSignal(i);
-                }
-            }
-        }
+//        if (downOutputs.size() >0) {
+//            for (ISubZone z : downSubZones) {
+//                for (InputSignal i : downOutputs) {
+//                    z.inSignal(i);
+//                }
+//            }
+//        }
     }
 
-    public void setActiveColumn(Column column) {
-        for (Column c : activeColumns) {
-            if (c != column) {
-                c.setUnactive();
-            }
-        }
-        activeColumns.clear();
-        activeColumns.push(column);
 
-    }
-    public void setUnactiveColumn(Column c) {
-        activeColumns.clear();
-        activeColumns.push(column);
-        for (Column c : columns) {
-            if (c != column) {
-                c.active = 0.0f; // Disable after active differ
-            }
+    public void outSignalActive(INeuron out) {
+        if (upOutput == null || upOutput.active < out.active) {
+            upOutput = out;
+            upOutputChange = true;
         }
-    }
-
-    public void outSignal(InputSignal signal) {
-        if (signal.type == SignalType.Active) {
-            if (upOutput == null || upOutput.id.active < signal.id.active) {
-                upOutput = signal;
-                upOutputChange = true;
-            }
-        }
-        if (signal.type == SignalType.Forecast || signal.type == SignalType.Motor) {
-            downOutputs.add(signal);
-        }
+//        if (signal.type == SignalType.Forecast || signal.type == SignalType.Motor) {
+//            downOutputs.add(signal);
+//        }
     }
 
     // DEBUG

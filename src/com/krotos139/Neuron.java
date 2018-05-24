@@ -5,33 +5,26 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Neuron {
+    private float forecast  = 0.0f;
     private Column column;
-    private HashMap<INeuron, Synaps> synaps;
-    private final float threshold = 0.8f;
+    private HashMap<INeuron, Float> synaps;
+    private final float threshold = 0.5f;
 
     public Neuron(Column column) {
         this.synaps = new HashMap<>();
         this.column = column;
     }
 
-    public void pushInput(LinkedList<InputSignal> inputs) {
+    public float pushInputActive(LinkedList<INeuron> inputs) {
         //active = 0.0f;
-        for (InputSignal s : inputs) {
-            if (s.type == SignalType.Active) {
-                Synaps syn = synaps.get(s.id);
-                if (syn!= null) column.active += syn.onSignal(s);
-            }
-            if (s.type == SignalType.Forecast) {
-                column.onForecast(s.id.active);
-            }
-            if (s.type == SignalType.Motor) {
-                column.active = s.id.active;
-                for (HashMap.Entry me : synaps.entrySet()) {
-                    column.outSignal(new InputSignal((INeuron)me.getKey(), SignalType.Motor));
-                }
-
+        float active = 0.0f;
+        for (INeuron s : inputs) {
+            Float syn = synaps.get(s);
+            if (syn!= null) {
+                active += syn;
             }
         }
+        return active;
     }
 
     // Debug
@@ -43,7 +36,7 @@ public class Neuron {
         float strength = 1.0f/synapsCount;
         for (int i=0 ; i<neurons.length ; i++) {
             if (neurons[i].active > threshold) {
-                synaps.put(neurons[i], new Synaps(neurons[i], strength));
+                synaps.put(neurons[i], new Float(strength));
             }
         }
     }

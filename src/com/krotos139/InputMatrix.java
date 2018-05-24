@@ -25,7 +25,7 @@ public class InputMatrix extends ISubZone {
     public void sendSignals() {
         for (int i=0 ; i<inputs.length ; i++) {
             if (inputs[i].active > oldInputsActive[i] && inputs[i].active > threshold) {
-                upSubZone.inSignal(new InputSignal(inputs[i], SignalType.Active));
+                upSubZone.inSignalActive(inputs[i]);
             }
         }
     }

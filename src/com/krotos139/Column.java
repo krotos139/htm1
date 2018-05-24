@@ -6,41 +6,42 @@ import java.util.LinkedList;
 public class Column extends INeuron {
 
     private ArrayList<Neuron> neurons;
+    private ArrayList<Neuron> forecastNeurons;
     private SubZone zone;
     private int lastActiveNeuron;
     private final int confDeepanalyse;
     private final float threshold = 0.8f;
 
+
     public Column(SubZone zone) {
         this.zone = zone;
         this.neurons = new ArrayList<Neuron>();
+        forecastNeurons = new ArrayList<Neuron>();
         active = 0.0f;
         lastActiveNeuron = -1;
         confDeepanalyse = 1;
     }
 
-    public void pushInput(LinkedList<InputSignal> inputs) {
-        if (this.lastActiveNeuron == -1) {
-            for (int i=0 ; i<this.confDeepanalyse ; i++) {
-                this.neurons.get(i).pushInput(inputs);
-            }
+    public void pushInput(LinkedList<INeuron> inputs) {
+        float dactive = 0.0f;
+        if (forecastNeurons.size() == 0) {
+            dactive = neurons.get(0).pushInputActive(inputs);
         } else {
-            for (int i=lastActiveNeuron ; i<this.confDeepanalyse ; i++) {
-                this.neurons.get(i).pushInput(inputs);
+            for (Neuron n : forecastNeurons) {
+                dactive += n.pushInputActive(inputs);
             }
         }
-        if (active > threshold) {
 
-            zone.outSignal(new InputSignal(this, SignalType.Active));
+        if (dactive > threshold) {
+            active = 1.0f;
+            zone.outSignalActive(this);
         }
+
     }
 
-    public void outSignal(InputSignal signal) {
-        zone.outSignal(signal);
-    }
 
-    public void onForecast(float a) {
-        active += a;
+    public void onForecast() {
+        active += 1.0f;
         // todo send forecasts
     }
 
@@ -55,43 +56,5 @@ public class Column extends INeuron {
 //        }
     }
 
-//    private Neuron enableNeuron;
-//
-//    private float activeAttenuation = 0.0f;
-//    private boolean isAttenuation = false;
-//
-//    public void setActiveAttenuation(float attenuation) {
-//        activeAttenuation = attenuation;
-//    }
-//    protected void onActive(Neuron n, float receiveActive, float activeAttenuation) {
-//        this.enableNeuron = n;
-//        this.active = Math.min(this.active+receiveActive, 1.0f);
-//        this.activeAttenuation = activeAttenuation;
-//        if (n != null) {
-//            n.sendPreActive();
-//        }
-//        isAttenuation = false;
-//    }
-//    public float analyse() {
-//        isAttenuation = true;
-//
-//        if (neurons.size() == 0) return 0.0f;
-//        if (enableNeuron == null) {
-//            enableNeuron = neurons.get(0);
-//        }
-//        enableNeuron.analyse();
-//        if (isAttenuation) {
-//            active = Math.max(0.0f, active - activeAttenuation);
-//        }
-//        //System.out.println("active:"+active+" prediction:"+ prediction +" enableNeuron:"+neurons.indexOf(enableNeuron));
-//        return getActive();
-//    }
-//    public void teach() {
-//        if (neurons.size() == 0) {
-//            zone.activeColumn = this;
-//            neurons.add(new Neuron(this));
-//            active = 0;
-//        }
-//    }
 
 }
