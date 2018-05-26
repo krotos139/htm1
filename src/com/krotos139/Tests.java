@@ -148,7 +148,7 @@ public class Tests extends Assert {
                 {false, false, true, false, false}, // 3
                 {true, false, true, false, false}, // 3, 1
                 {true, false, false, false, false}, // 1
-                {false, true, false, false, false}, // 2
+                {false, true, false, false, true}, // 2, 5
                 {false, true, false, false, false}, // 2
                 {false, false, false, true, false}, // 4
                 {false, false, false, true, false}, // 4
@@ -182,12 +182,14 @@ public class Tests extends Assert {
                 System.out.print((in_e[n][i]?"A":"_") + " ");
             }
             System.out.print("\n");
-
+//            if (n == 10) {
+//                System.out.print("DEBUG\n");
+//            }
             in1.sendSignals();
             sz1.analyze();
             System.out.print("Columns    : ");
-            for (int i = 0; i < out1.inputs.length; i++) {
-                System.out.print((out1.inputs[i].active > 0.8f?"A":"_") + " ");
+            for (int i = 0; i < out1.inputsActives.length; i++) {
+                System.out.print((out1.inputsActives[i] > 0.8f?"A":"_") + " ");
             }
             System.out.print("\n");
             System.out.print("Prediction : ");
@@ -195,6 +197,11 @@ public class Tests extends Assert {
                 System.out.print((in1.inputs[i].prediction >= 0.5f?"A":"_") + " ");
             }
             System.out.print("\n");
+//            System.out.print("Columns Val: ");
+//            for (int i = 0; i < out1.inputsActives.length; i++) {
+//                System.out.print(sz1.getColumns()[i].active  + " ");
+//            }
+//            System.out.print("\n");
             out1.reset();
         }
         //sz1.teach();

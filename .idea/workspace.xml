@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="175" column="57" lean-forward="true" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
+            <state relative-caret-position="136">
+              <caret line="207" column="0" lean-forward="true" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,8 +27,8 @@
       <file leaf-file-name="SubZone.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/SubZone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="95" column="33" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="33" />
+            <state relative-caret-position="119">
+              <caret line="120" column="17" lean-forward="true" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,28 +39,11 @@
       <file leaf-file-name="InputMatrix.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/InputMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+            <state relative-caret-position="85">
+              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
               <folding>
                 <element signature="e#1002#1003#0" expanded="true" />
                 <element signature="e#1047#1048#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ISubZone.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/krotos139/ISubZone.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="8" />
-              <folding>
-                <element signature="e#95#96#0" expanded="true" />
-                <element signature="e#157#158#0" expanded="true" />
-                <element signature="e#207#208#0" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#378#379#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Column.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Column.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/Column.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="1309">
+              <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,6 +81,16 @@
                 <element signature="e#794#795#0" expanded="true" />
                 <element signature="e#832#833#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutputMatrix.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,11 +134,11 @@
         <option value="$PROJECT_DIR$/src/com/krotos139/ISubZone.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Synaps.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java" />
-        <option value="$PROJECT_DIR$/src/com/krotos139/Tests.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/InputMatrix.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Neuron.java" />
-        <option value="$PROJECT_DIR$/src/com/krotos139/SubZone.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Column.java" />
+        <option value="$PROJECT_DIR$/src/com/krotos139/SubZone.java" />
+        <option value="$PROJECT_DIR$/src/com/krotos139/Tests.java" />
       </list>
     </option>
   </component>
@@ -355,34 +348,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests_HW1 - 2018.05.26 at 22h 31m 11s.xml">
-      <configuration name="Tests.HW1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_HW1 - 2018.05.26 at 22h 32m 38s.xml">
-      <configuration name="Tests.HW1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_HW1 - 2018.05.26 at 22h 34m 55s.xml">
-      <configuration name="Tests.HW1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 22h 38m 14s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 12m 28s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 22h 39m 01s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 12m 34s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 22h 55m 23s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 12m 36s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 22h 59m 17s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 13m 39s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 23h 04m 21s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 14m 14s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 23h 05m 12s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 14m 26s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.26 at 23h 13m 28s.xml">
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 15m 04s.xml">
+      <configuration name="Tests.HW2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 15m 38s.xml">
+      <configuration name="Tests.HW2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 17m 30s.xml">
+      <configuration name="Tests.HW2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 21m 08s.xml">
       <configuration name="Tests.HW2" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -408,7 +401,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39969373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5313936" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -423,7 +416,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/krotos139/Column.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -728,7 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/Input.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -746,55 +746,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/InputSignal.java" />
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/Synaps.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/ISubZone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="8" />
-          <folding>
-            <element signature="e#95#96#0" expanded="true" />
-            <element signature="e#157#158#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="175" column="57" lean-forward="true" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/INeuron.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/InputMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,20 +766,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/ISubZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding>
+            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/InputMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/SubZone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="95" column="33" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="33" />
+        <state relative-caret-position="119">
+          <caret line="120" column="17" lean-forward="true" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="460" column="19" lean-forward="false" selection-start-line="460" selection-start-column="19" selection-end-line="460" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/Column.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="207" column="0" lean-forward="true" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

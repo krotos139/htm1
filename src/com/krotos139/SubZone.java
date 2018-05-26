@@ -13,7 +13,8 @@ public class SubZone extends ISubZone {
     private LinkedList<ISubZone> downSubZones;
 
     private INeuron upOutput;
-    private boolean upOutputChange;
+    private float upOutputActive;
+    private LinkedList<INeuron> upOutputs;
     private LinkedList<INeuron> downOutputs;
 
     public SubZone(int numColumns) {
@@ -27,7 +28,8 @@ public class SubZone extends ISubZone {
         upSubZone = null;
         downSubZones = new LinkedList<>();
         downOutputs = new LinkedList<>();
-        upOutputChange = false;
+        upOutputActive = 0.0f;
+        upOutputs = new LinkedList<>();
     }
 
     @Override
@@ -61,18 +63,20 @@ public class SubZone extends ISubZone {
 
         for (Column c : columns) {
             c.pushInput(inputActive);
+            c.onDegradation();
         }
         inputActive.clear();
 
         if (upSubZone != null && upOutput != null) {
             upSubZone.inSignalActive(upOutput);
         }
+
         for (Column c : columns) {
-            if (c != upOutput) {
-                c.active = 0.0f; // Disable after active differ
+            if (!upOutputs.contains(c)) {
+                c.onDeactive();
             }
         }
-
+        upOutputs.clear();
 //        if (downOutputs.size() >0) {
 //            for (ISubZone z : downSubZones) {
 //                for (InputSignal i : downOutputs) {
@@ -83,11 +87,15 @@ public class SubZone extends ISubZone {
     }
 
 
-    public void outSignalActive(INeuron out) {
+    public void outSignalActive(INeuron out, float active) {
         if (upOutput == null) {
             upOutput = out;
-            upOutputChange = true;
+            upOutputActive = active;
+        } else if (active > upOutputActive){
+            upOutput = out;
+            upOutputActive = active;
         }
+        upOutputs.add(out);
 //        if (signal.type == SignalType.Forecast || signal.type == SignalType.Motor) {
 //            downOutputs.add(signal);
 //        }
@@ -98,6 +106,12 @@ public class SubZone extends ISubZone {
             for (INeuron n : out) {
                 sz.inSignalForecast(n);
             }
+        }
+    }
+
+    public void onDeactive() {
+        for (Column c : columns) {
+            c.onDeactive();
         }
     }
 

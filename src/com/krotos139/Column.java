@@ -10,6 +10,7 @@ public class Column extends INeuron {
     private int lastActiveNeuron;
     private final int confDeepanalyse;
     private final float threshold = 0.8f;
+    private final float degradation = 0.4f;
 
 
     public Column(SubZone zone) {
@@ -28,26 +29,45 @@ public class Column extends INeuron {
         dactive = (dactive - 0.5f)*2f;
 
         if (dactive > threshold) {
-            active = 1.0f;
-            zone.outSignalActive(this);
+            active += dactive;
             lastActiveNeuron += 1;
         }
-        if (lastActiveNeuron >= neurons.size()) {
-            lastActiveNeuron = 0;
+        if (active > threshold) {
+            zone.outSignalActive(this, active);
         }
-        if (dactive < 1-threshold) {
-            //Deactive
-            lastActiveNeuron = 0;
+        if (lastActiveNeuron >= neurons.size()) {
+            onDeactive();
+        }
+        if (active > 1) active = 1;
+        if (active < 1-threshold) {
+            onDeactive();
         }
         if (lastActiveNeuron != 0) {
             zone.outSignalForecast(neurons.get(lastActiveNeuron).getSynapses());
         }
     }
 
+    public void onDegradation() {
+        active -= degradation;
+        if (active < 1-threshold) {
+            onDeactive();
+        }
+    }
 
     public void onForecast() {
         active += 1.0f;
         // todo send forecasts
+    }
+
+    public void onDeactive() {
+        lastActiveNeuron = 0;
+        active = 0;
+    }
+
+    public void onDeactiveZone() {
+        lastActiveNeuron = 0;
+        active = 0;
+        zone.onDeactive();
     }
 
     // =========================================
