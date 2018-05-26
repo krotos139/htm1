@@ -6,7 +6,6 @@ import java.util.LinkedList;
 public class Column extends INeuron {
 
     private ArrayList<Neuron> neurons;
-    private ArrayList<Neuron> forecastNeurons;
     private SubZone zone;
     private int lastActiveNeuron;
     private final int confDeepanalyse;
@@ -16,27 +15,33 @@ public class Column extends INeuron {
     public Column(SubZone zone) {
         this.zone = zone;
         this.neurons = new ArrayList<Neuron>();
-        forecastNeurons = new ArrayList<Neuron>();
         active = 0.0f;
-        lastActiveNeuron = -1;
+        lastActiveNeuron = 0;
         confDeepanalyse = 1;
     }
 
     public void pushInput(LinkedList<INeuron> inputs) {
         float dactive = 0.0f;
-        if (forecastNeurons.size() == 0) {
-            dactive = neurons.get(0).pushInputActive(inputs);
-        } else {
-            for (Neuron n : forecastNeurons) {
-                dactive += n.pushInputActive(inputs);
-            }
+        for (int i=0 ; i<confDeepanalyse ; i++) {
+            dactive += neurons.get(lastActiveNeuron+i).pushInputActive(inputs);
         }
+        dactive = (dactive - 0.5f)*2f;
 
         if (dactive > threshold) {
             active = 1.0f;
             zone.outSignalActive(this);
+            lastActiveNeuron += 1;
         }
-
+        if (lastActiveNeuron >= neurons.size()) {
+            lastActiveNeuron = 0;
+        }
+        if (dactive < 1-threshold) {
+            //Deactive
+            lastActiveNeuron = 0;
+        }
+        if (lastActiveNeuron != 0) {
+            zone.outSignalForecast(neurons.get(lastActiveNeuron).getSynapses());
+        }
     }
 
 

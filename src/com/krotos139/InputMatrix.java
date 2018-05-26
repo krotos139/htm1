@@ -29,6 +29,12 @@ public class InputMatrix extends ISubZone {
             }
         }
     }
+
+    @Override
+    public void inSignalForecast(INeuron inputNeuron) {
+        inputNeuron.prediction = 1.0f;
+    }
+
     // Debug
     public void setBooleans( boolean []in1) {
         for (int i=0 ; i < Math.min(inputs.length, in1.length) ; i++) {

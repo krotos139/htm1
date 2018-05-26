@@ -3,6 +3,7 @@ package com.krotos139;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class Neuron {
     private float forecast  = 0.0f;
@@ -17,14 +18,18 @@ public class Neuron {
 
     public float pushInputActive(LinkedList<INeuron> inputs) {
         //active = 0.0f;
-        float active = 0.0f;
+        int activeSynapsCount = 0;
         for (INeuron s : inputs) {
             Float syn = synaps.get(s);
             if (syn!= null) {
-                active += syn;
+                activeSynapsCount++;
             }
         }
-        return active;
+        return activeSynapsCount/synaps.size();
+    }
+
+    public Set<INeuron> getSynapses() {
+        return synaps.keySet();
     }
 
     // Debug

@@ -2,6 +2,7 @@ package com.krotos139;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class SubZone extends ISubZone {
     private Column [] columns;
@@ -55,22 +56,23 @@ public class SubZone extends ISubZone {
                 ((Column)s).onForecast();
             }
         }
+
+        upOutput = null;
+
         for (Column c : columns) {
             c.pushInput(inputActive);
         }
         inputActive.clear();
 
-        if (upOutputChange) {
-            if (upSubZone != null) {
-                upSubZone.inSignalActive(upOutput);
-            }
-            for (Column c : columns) {
-                if (c != upOutput) {
-                    c.active = 0.0f; // Disable after active differ
-                }
-            }
-
+        if (upSubZone != null && upOutput != null) {
+            upSubZone.inSignalActive(upOutput);
         }
+        for (Column c : columns) {
+            if (c != upOutput) {
+                c.active = 0.0f; // Disable after active differ
+            }
+        }
+
 //        if (downOutputs.size() >0) {
 //            for (ISubZone z : downSubZones) {
 //                for (InputSignal i : downOutputs) {
@@ -82,13 +84,21 @@ public class SubZone extends ISubZone {
 
 
     public void outSignalActive(INeuron out) {
-        if (upOutput == null || upOutput.active < out.active) {
+        if (upOutput == null) {
             upOutput = out;
             upOutputChange = true;
         }
 //        if (signal.type == SignalType.Forecast || signal.type == SignalType.Motor) {
 //            downOutputs.add(signal);
 //        }
+    }
+
+    public void outSignalForecast(Set<INeuron> out) {
+        for (ISubZone sz : downSubZones) {
+            for (INeuron n : out) {
+                sz.inSignalForecast(n);
+            }
+        }
     }
 
     // DEBUG
