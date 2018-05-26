@@ -18,18 +18,18 @@ public class Neuron {
 
     public float pushInputActive(LinkedList<INeuron> inputs) {
         //active = 0.0f;
-        int activeSynapsCount = 0;
+        float activeSynapsCount = 0f;
         for (INeuron s : inputs) {
             Float syn = synaps.get(s);
             if (syn!= null) {
-                activeSynapsCount++;
+                activeSynapsCount+=syn;
             }
         }
-        return activeSynapsCount/synaps.size();
+        return activeSynapsCount;
     }
 
-    public Set<INeuron> getSynapses() {
-        return synaps.keySet();
+    public HashMap<INeuron, Float> getSynapses() {
+        return synaps;
     }
 
     // Debug
@@ -42,6 +42,18 @@ public class Neuron {
         for (int i=0 ; i<neurons.length ; i++) {
             if (neurons[i].active > threshold) {
                 synaps.put(neurons[i], new Float(strength));
+            }
+        }
+        if (true) {
+            int synapsNCount = 0;
+            for (int i=0 ; i<neurons.length ; i++) {
+                if (neurons[i].active < threshold) synapsNCount++;
+            }
+            float strengthN = 1.0f/synapsNCount;
+            for (int i=0 ; i<neurons.length ; i++) {
+                if (neurons[i].active < threshold) {
+                    synaps.put(neurons[i], new Float(-strengthN));
+                }
             }
         }
     }

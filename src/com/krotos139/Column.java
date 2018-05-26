@@ -1,7 +1,9 @@
 package com.krotos139;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class Column extends INeuron {
 
@@ -43,7 +45,13 @@ public class Column extends INeuron {
             onDeactive();
         }
         if (lastActiveNeuron != 0) {
-            zone.outSignalForecast(neurons.get(lastActiveNeuron).getSynapses());
+            Iterator it = neurons.get(lastActiveNeuron).getSynapses().entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry me = (Map.Entry)it.next();
+                if ((Float)me.getValue() > 0) {
+                    zone.outSignalForecast((INeuron) me.getKey());
+                }
+            }
         }
     }
 

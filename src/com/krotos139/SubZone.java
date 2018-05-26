@@ -101,11 +101,9 @@ public class SubZone extends ISubZone {
 //        }
     }
 
-    public void outSignalForecast(Set<INeuron> out) {
+    public void outSignalForecast(INeuron out) {
         for (ISubZone sz : downSubZones) {
-            for (INeuron n : out) {
-                sz.inSignalForecast(n);
-            }
+            sz.inSignalForecast(out);
         }
     }
 
