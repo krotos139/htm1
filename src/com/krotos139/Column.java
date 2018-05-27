@@ -24,6 +24,7 @@ public class Column extends INeuron {
     }
 
     public void pushInput(LinkedList<INeuron> inputs) {
+        if (neurons.size() == 0) return;
         float dactive = 0.0f;
         for (int i=0 ; i<confDeepanalyse ; i++) {
             dactive += neurons.get(lastActiveNeuron+i).pushInputActive(inputs);

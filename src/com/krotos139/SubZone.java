@@ -58,6 +58,7 @@ public class SubZone extends ISubZone {
                 ((Column)s).onForecast();
             }
         }
+        inputForecast.clear();
 
         upOutput = null;
 

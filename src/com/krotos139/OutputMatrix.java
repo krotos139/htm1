@@ -1,14 +1,21 @@
 package com.krotos139;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class OutputMatrix extends ISubZone {
     public float[] inputsActives;
     public INeuron[] inputs;
+    private LinkedList<ISubZone> downSubZones;
 
     public OutputMatrix(int count) {
         inputs = new INeuron[count];
         inputsActives = new float[count];
+        downSubZones = new LinkedList<>();
+    }
+
+    public void setDownSubZones(ISubZone zone) {
+        downSubZones.push(zone);
     }
 
     public void addInput(int i, INeuron in) {
@@ -35,6 +42,16 @@ public class OutputMatrix extends ISubZone {
                 inputsActives[i] = 1;
                 break;
             }
+        }
+    }
+
+    public void outSignalForecast(int column) {
+        outSignalForecast(inputs[column]);
+    }
+
+    public void outSignalForecast(INeuron out) {
+        for (ISubZone sz : downSubZones) {
+            sz.inSignalForecast(out);
         }
     }
 

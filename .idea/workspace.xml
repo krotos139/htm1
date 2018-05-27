@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da6c7b09-27b6-4270-a634-3ee34db30390" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/krotos139/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/krotos139/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/krotos139/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/krotos139/Neuron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/krotos139/SubZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/krotos139/SubZone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/krotos139/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/krotos139/Tests.java" afterDir="false" />
     </list>
@@ -21,8 +20,8 @@
       <file leaf-file-name="Tests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="162" column="58" selection-start-line="162" selection-start-column="58" selection-end-line="162" selection-end-column="58" />
+            <state relative-caret-position="67">
+              <caret line="247" selection-start-line="247" selection-end-line="247" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,10 +32,16 @@
       <file leaf-file-name="SubZone.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/SubZone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="152">
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1221#1222#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
+                <element signature="e#3358#3359#0" expanded="true" />
+                <element signature="e#3388#3389#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,8 +50,8 @@
       <file leaf-file-name="InputMatrix.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/InputMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="152">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#1002#1003#0" expanded="true" />
                 <element signature="e#1047#1048#0" expanded="true" />
@@ -67,8 +72,8 @@
       <file leaf-file-name="Column.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/Column.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+            <state relative-caret-position="84">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,8 +98,15 @@
       <file leaf-file-name="OutputMatrix.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="136">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#453#454#0" expanded="true" />
+                <element signature="e#492#493#0" expanded="true" />
+                <element signature="e#1239#1240#0" expanded="true" />
+                <element signature="e#1288#1289#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,12 +143,12 @@
         <option value="$PROJECT_DIR$/src/com/krotos139/InputSignal.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/ISubZone.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Synaps.java" />
-        <option value="$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/InputMatrix.java" />
-        <option value="$PROJECT_DIR$/src/com/krotos139/SubZone.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Neuron.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Column.java" />
+        <option value="$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java" />
         <option value="$PROJECT_DIR$/src/com/krotos139/Tests.java" />
+        <option value="$PROJECT_DIR$/src/com/krotos139/SubZone.java" />
       </list>
     </option>
   </component>
@@ -180,14 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Tests.HW2">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.krotos139.Main" />
-      <module name="ai1" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.Tests.HW3">
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ai1" />
       <extension name="coverage">
@@ -257,6 +262,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="Tests.HW3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ai1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.krotos139.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.krotos139" />
+      <option name="MAIN_CLASS_NAME" value="com.krotos139.Tests" />
+      <option name="METHOD_NAME" value="HW3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="Tests.testToHexString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ai1" />
       <extension name="coverage">
@@ -297,18 +325,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Tests.HW1" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.Tests.testToHexString" />
       <item itemvalue="JUnit.Tests.HW2" />
       <item itemvalue="JUnit.Tests" />
+      <item itemvalue="JUnit.Tests.HW3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests.HW3" />
         <item itemvalue="JUnit.Tests.HW2" />
         <item itemvalue="JUnit.Tests.HW1" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.Tests.testToHexString" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -326,40 +354,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 17m 30s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 20m 50s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 00h 21m 08s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 28m 51s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 01h 31m 24s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 32m 15s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 01h 46m 01s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 33m 47s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 01h 47m 10s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 37m 23s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 01h 49m 02s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 38m 55s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 01h 49m 21s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 39m 20s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 01h 59m 52s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 40m 00s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 02h 02m 59s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 41m 57s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_HW2 - 2018.05.27 at 02h 03m 05s.xml">
-      <configuration name="Tests.HW2" configurationId="JUnit" />
+    <history-entry file="Tests_HW3 - 2018.05.27 at 09h 42m 06s.xml">
+      <configuration name="Tests.HW3" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -379,7 +406,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5310136" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.62178516" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -394,7 +421,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -710,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/ISubZone.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -734,11 +754,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/InputMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        <state relative-caret-position="152">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#1002#1003#0" expanded="true" />
             <element signature="e#1047#1048#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,30 +785,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/SubZone.java">
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/OutputMatrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="136">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/krotos139/Column.java">
+    <entry file="file://$PROJECT_DIR$/src/com/krotos139/SubZone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+        <state relative-caret-position="152">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#3358#3359#0" expanded="true" />
+            <element signature="e#3388#3389#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/krotos139/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="162" column="58" selection-start-line="162" selection-start-column="58" selection-end-line="162" selection-end-column="58" />
+        <state relative-caret-position="67">
+          <caret line="247" selection-start-line="247" selection-end-line="247" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
