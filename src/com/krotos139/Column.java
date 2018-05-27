@@ -68,6 +68,17 @@ public class Column extends INeuron {
         // todo send forecasts
     }
 
+    public void onMotor() {
+        if (neurons.size() == 0) return;
+        Iterator it = neurons.get(lastActiveNeuron).getSynapses().entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry me = (Map.Entry)it.next();
+            if ((Float)me.getValue() > 0) {
+                zone.outSignalMotor((INeuron) me.getKey());
+            }
+        }
+    }
+
     public void onDeactive() {
         lastActiveNeuron = 0;
         active = 0;

@@ -272,5 +272,76 @@ public class Tests extends Assert {
         }
 
     }
+    @Test
+    public void HW4() {
+        System.out.print("HW4 - Motor\n");
+        InputMatrix in1 = new InputMatrix(5);
+        SubZone sz1 = new SubZone(5);
+        OutputMatrix out1 = new OutputMatrix(5);
+        in1.setUpSubZone(sz1);
+        sz1.setDownSubZones(in1);
+        sz1.setUpSubZone(out1);
+        out1.setDownSubZones(sz1);
+        out1.addInputs(sz1);
+        System.out.print("Learn\n");
+
+        boolean [][]in_p2 = {
+                {false, false, true, true, false},
+                {false, false, false, true, true},
+        };
+        for (int i=0 ; i<in_p2.length ; i++) {
+            in1.setBooleans(in_p2[i]);
+            sz1.setColumnNeurons(1, in1.inputs);
+        }
+        boolean [][]in_p3 = {
+                {false, false, true, true, false},
+                {false, true, true, false, false},
+                {true, true, false, false, false},
+        };
+        for (int i=0 ; i<in_p3.length ; i++) {
+            in1.setBooleans(in_p3[i]);
+            sz1.setColumnNeurons(2, in1.inputs);
+        }
+
+        boolean [][]in_p = {
+                {false, false, false, true, false},// _
+                {false, false, true, true, false},// 2,3
+        };
+
+        for (int n = 0; n < in_p.length; n++) {
+            System.out.print("Analyse " + n + " pattern\n");
+            in1.setBooleans(in_p[n]);
+            System.out.print("Pattern    : ");
+            for (int i = 0; i < in1.inputs.length; i++) {
+                System.out.print((in1.inputs[i].active > 0.5f ? "A" : "_") + " ");
+            }
+            System.out.print("\n");
+            in1.sendSignals();
+            sz1.analyze();
+            System.out.print("Columns    : ");
+            for (int i = 0; i < out1.inputsActives.length; i++) {
+                System.out.print((out1.inputsActives[i] > 0.8f ? "A" : "_") + " ");
+            }
+            System.out.print("\n");
+            System.out.print("Prediction : ");
+            for (int i = 0; i < in1.inputs.length; i++) {
+                System.out.print((in1.inputs[i].prediction >= 0.5f ? "A" : "_") + " ");
+            }
+            System.out.print("\n");
+            for (int p=0 ; p<5 ; p++) {
+                System.out.print("Motor " + p + " pattern\n");
+                out1.outSignalMotor(p);
+                System.out.print("Motor : ");
+                for (int i = 0; i < in1.inputs.length; i++) {
+                    System.out.print((in1.getMotorValues()[i] >= 0.5f ? "A" : "_") + " ");
+                }
+                System.out.print("\n");
+                in1.reset();
+            }
+            out1.reset();
+        }
+        sz1.onDeactive();
+
+    }
 
 }

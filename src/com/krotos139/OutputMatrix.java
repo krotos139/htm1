@@ -55,6 +55,16 @@ public class OutputMatrix extends ISubZone {
         }
     }
 
+    public void outSignalMotor(int column) {
+        outSignalMotor(inputs[column]);
+    }
+
+    public void outSignalMotor(INeuron out) {
+        for (ISubZone sz : downSubZones) {
+            sz.inSignalMotor(out);
+        }
+    }
+
     // DEBUG
     public void reset() {
         for (int i=0 ; i<inputs.length ; i++) {

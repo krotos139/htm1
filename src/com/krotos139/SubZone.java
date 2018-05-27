@@ -8,6 +8,7 @@ public class SubZone extends ISubZone {
     private Column [] columns;
     private LinkedList<INeuron> inputActive;
     private LinkedList<INeuron> inputForecast;
+    //private LinkedList<INeuron> inputMotor;
     private LinkedList<Column> activeColumns;
     private ISubZone upSubZone;
     private LinkedList<ISubZone> downSubZones;
@@ -24,6 +25,7 @@ public class SubZone extends ISubZone {
         }
         inputActive = new LinkedList<>();
         inputForecast = new LinkedList<>();
+        //inputMotor = new LinkedList<>();
         activeColumns = new LinkedList<>();
         upSubZone = null;
         downSubZones = new LinkedList<>();
@@ -40,6 +42,13 @@ public class SubZone extends ISubZone {
     @Override
     public void inSignalForecast(INeuron inputNeuron) {
         inputForecast.add(inputNeuron);
+    }
+
+    @Override
+    public void inSignalMotor(INeuron inputNeuron) {
+        //inputMotor.add(inputNeuron);
+        ((Column)inputNeuron).onMotor();
+
     }
 
     public void setDownSubZones(ISubZone zone) {
@@ -105,6 +114,12 @@ public class SubZone extends ISubZone {
     public void outSignalForecast(INeuron out) {
         for (ISubZone sz : downSubZones) {
             sz.inSignalForecast(out);
+        }
+    }
+
+    public void outSignalMotor(INeuron out) {
+        for (ISubZone sz : downSubZones) {
+            sz.inSignalMotor(out);
         }
     }
 
